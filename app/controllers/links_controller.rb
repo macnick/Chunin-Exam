@@ -9,9 +9,12 @@ class LinksController < ApplicationController
 
   def create
     @link = Link.new(params.require(:link).permit(:url))
-    @link.shortened = shorten
+    # @link.shortened = shorten
     @link.clicked = 0
-    @link.save
+    while !@link.save do 
+      @link.shortened = shorten
+      @link.save
+    end
     # render plain: @link.inspect
     redirect_to @link
   end
@@ -29,7 +32,7 @@ class LinksController < ApplicationController
     def shorten
       host = 'http://localhost:3000//s/'
       charset = Array('A'..'Z') + Array('a'..'z') + Array('0'..'9')
-      Array.new(7) { charset.sample }.join
+      Array.new(6) { charset.sample }.join
     end
     
 end
