@@ -1,0 +1,11 @@
+<h1>Welcome to shortener!</h1>
+
+<h2>Input the link to shorten</h2>
+
+<main>
+<%= form_with scope: :link, url: links_path, method: :post do |form| %>
+  <%= form.label :url, "Enter link to shorten:" %>
+  <%= form.text_field :url, size: "70" %>
+  <%= form.submit "Shorten" %>
+<% end %>
+</main>

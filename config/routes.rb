@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  root "shortener#shorten"
+  root "links#new"
+  resources :links, only: [:new, :create, :show]
 end
