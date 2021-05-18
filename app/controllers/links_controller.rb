@@ -9,19 +9,18 @@ class LinksController < ApplicationController
 
   def create
     @link = Link.new(params.require(:link).permit(:url))
-    # @link.shortened = shorten
     @link.clicked = 0
     while !@link.save do 
       @link.shortened = shorten
       @link.save
     end
     # render plain: @link.inspect
+    flash[:notice] = "You url has been shortened!"
     redirect_to @link
   end
 
   def redirect
-    @link = Link.find_by(shortened: params[:shortened])#_shortened(params[:shortened]) 
-    # render plain: @link.inspect
+    @link = Link.find_by(shortened: params[:shortened])
     render 'errors/404', status: 404 if @link.nil?
     @link.update_attribute(:clicked, @link.clicked + 1)
     redirect_to @link.url
