@@ -29,7 +29,7 @@ class LinksController < ApplicationController
   private
 
     def shorten
-      host = 'http://localhost:3000//s/'
+      host = 'http://localhost:3000/s/'
       charset = Array('A'..'Z') + Array('a'..'z') + Array('0'..'9')
       Array.new(6) { charset.sample }.join
     end
