@@ -1,11 +1,10 @@
 <h1>Welcome to shorty, the cool URL shortener!</h1>
 
-<h2>Input the link to shorten</h2>
+<h2>Paste the link to shorten</h2>
 
 <main>
 <%= form_with scope: :link, url: links_path, method: :post do |form| %>
-  <%= form.label :url, "Enter link to shorten:" %>
-  <%= form.text_field :url, size: "80" %>
+  <%= form.text_field :url, size: "80", placeholder: "Paste long url and shorten it" %>
   <%= form.submit "Shorten" %>
 <% end %>
 </main>
