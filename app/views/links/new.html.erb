@@ -3,8 +3,10 @@
 <h2>Paste the link to shorten</h2>
 
 <main>
-<%= form_with scope: :link, url: links_path, method: :post do |form| %>
-  <%= form.text_field :url, size: "80", placeholder: "Paste long url and shorten it" %>
-  <%= form.submit "Shorten" %>
-<% end %>
+  <div data-controller="form">
+    <%= form_with scope: :link, url: links_path, method: :post do |form| %>
+      <%= form.text_field :url, size: "80", placeholder: "Paste long url and shorten it" %>
+      <%= form.submit "Shorten" %>
+    <% end %>
+  </div>
 </main>
