@@ -5,8 +5,13 @@
 <main>
   <div data-controller="form">
     <%= form_with scope: :link, url: links_path, method: :post do |form| %>
-      <%= form.text_field :url, size: "80", placeholder: "Paste long url and shorten it" %>
+      <%= form.text_field :url, size: "80", placeholder: "Paste long url and shorten it", 
+      'data-form-target' => "link",
+      'data-action' => "change->form#countChar" %>
       <%= form.submit "Shorten" %>
     <% end %>
+    <div>
+      Number of characters: <span data-form-target="counter">0</span>
+    </div>
   </div>
 </main>
