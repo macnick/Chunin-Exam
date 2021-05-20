@@ -14,7 +14,6 @@ class LinksController < ApplicationController
       @link.shortened = shorten
       @link.save
     end
-    # render plain: @link.inspect
     flash[:notice] = "You url has been shortened!"
     redirect_to @link
   end

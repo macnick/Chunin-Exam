@@ -1,4 +1,15 @@
 <h1>Here is your link: </h1>
-<h2>http://localhost:3000/s/<%=@link.shortened %></h2>
 
-<%= button_to 'Create Another', '/', method: :get %>
+<div data-controller="clipboard">
+  <h2 data-action="load@window->clipboard#showSaved">http://localhost:3000/s/<%= @link.shortened %></h2>
+  <h3 data-clipboard-target="chars">You saved 0 characters!</h3>
+
+  <input data-clipboard-target="source" type="text" 
+        value="http://localhost:3000/s/<%= @link.shortened %>" 
+        size="40" readonly>
+  <button data-action="clipboard#copy" class="clipboard-button">Copy to Clipboard</button>
+</div>
+
+<div>
+  <%= button_to 'Create Another', '/', method: :get %>
+</div>

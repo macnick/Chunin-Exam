@@ -6,6 +6,7 @@ export default class extends Controller {
   countChar() {
     let numOfChars = this.linkTarget.value.length;
     this.counterTarget.innerText = numOfChars;
+    localStorage.setItem('numOfChars', `${numOfChars}`)
   }
 
 }
