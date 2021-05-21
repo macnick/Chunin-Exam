@@ -1,73 +1,39 @@
-# URL shortener app
+## URL shortener app
 
-A URL shortener is an online application that converts a regular URL into its condensed format.
 
-The user only has to copy the full URL of a website and paste it into the URL shortening tool to come up with an abbreviated version that is around 10 to 20 characters long.
+URL shortening is a technique on the World Wide Web in which a Uniform Resource Locator (URL) may be made substantially shorter and still direct to the required page. This is achieved by using a redirect which links to the web page that has a long URL.
+
+The user only has to copy the full URL of a website and paste it into the URL shortening tool to come up with an abbreviated version that is around 28 characters long.
 
 Example:
 
 Regular URL - http://www.nytimes.com/2012/08/09/us/more-casinos-and-internet-gambling-threaten-shakopee-tribe.html?_r=1&hp
 
-Shortened URL - http://`your-domain`/P7eg6B
+Shortened URL - http://localhos:3000/P7eg6B
 
 Shortened URL then redirects to the original URL.
 
-**Plus points for challengers are able to track as much of analytics as possible!**
+The app also keeps track of the number of redirects. In a future version will keep track of the time when a link was clicked.
 
-### 2. Stimulus
+### Description
 
-Install and use stimulus to show off some of that JavaScript magic.
+The home page has an input field where the user can paste or type the URL to be shortened. After clicking the **Shorten** button the app does some basic checking if the URL is valid. If it is, it creates a 6 character slug which then saves to the DB. 
 
-Please try to put as much of your JavaScript into Stimulus controllers as possible!
+The user is transferred to the next page where he can click a button to copy her shortened link to the clipboard. There is another button if she wants to shorten another URL.
 
-### 3. Specs
+### How I did it
 
-Install and configure RSpec and Capybara to test your code.
+There is one table to save the original and shortened links and the times a link was used.
+There are two views. One to get the long link and the second to display the shortened one.
 
-**Plus points for challengers with best code coverage!**
+I use Stimulus to add two extra capabilities. One is to count how many characters the shortened URL is shorter than the original and the second is to activate the copy link button. 
 
-### 4. Write documentation
+Also installed RSpec and Capybara to write model and feature tests. 
 
-Rewrite this readme to describe your app and explain your approuch. Give as much info to the reviewers as possible!
+I didn't do any styling since it was not in the requirements.
 
-## Tips
+👤 **Author**
 
-- Submit your PR as you would in a professional environment
-- Keep your commit history and your diffs clean
-- Try to write clean code
-
-## How do I submit a Pull Request?
-
-Since this a public repository, submitting a Pull Request will not be the same as when you're a collaborator. The instructions below will help you push the changes to the repo.
-
-- Fork the project to your personal Github.
-- Clone the challenge to your local from your new forked repo in your personal git account.
-
-  ```
-    git clone <forked account>
-
-    example: git clone https://github.com/EmirVatric/Chunin-Exam
-  ```
-
-- Any changes made in the original repository should not be synced to your forked repository. The following commands enable us to track the original repository as a remote of the fork.
-
-   ```
-     git remote add --track master upstream https://github.com/EmirVatric/Chunin-Exam.git
-     git fetch upstream
-   ```
-
-- Create a new branch for your changes.
-
-   ```
-    git checkout -b <your-branch-name> upstream/master
-   ```
-
-- Make your changes, stage, and commit files necessary.
-- Push the changes to remote.
-
-  ```
-   git push -u origin <your-branch-name> origin
-  ```
-
-- You can now go to Github, and submit a PR with necessary details.
-- Happy Coding! Please don't hesitate to shoot an email to the recruitment team if you have any issues while pushing the code.
+- Github: [@macnick](https://github.com/macnick)
+- Twitter: [@mac_experts](https://twitter.com/mac_experts)
+- Linkedin: [Nick Haralampopoulos](https://www.linkedin.com/in/nick-haralampopoulos-26a55412a/)
