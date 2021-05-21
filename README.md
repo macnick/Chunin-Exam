@@ -49,7 +49,7 @@ Please try to put as much of your JavaScript into Stimulus controllers as possib
 
 ### 3. Specs
 
-Install and configure RSpec and Capybara to test your coode.
+Install and configure RSpec and Capybara to test your code.
 
 **Plus points for challengers with best code coverage!**
 

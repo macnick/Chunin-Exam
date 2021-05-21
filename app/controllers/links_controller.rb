@@ -10,6 +10,11 @@ class LinksController < ApplicationController
   def create
     @link = Link.new(params.require(:link).permit(:url))
     @link.clicked = 0
+    if (!@link.save && @link.errors.messages[:url].include?("is invalid"))
+      flash[:error] = "Pasted url is invalid! Please try again"
+      redirect_to root_path
+      return
+    end
     while !@link.save do 
       @link.shortened = shorten
       @link.save

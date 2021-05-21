@@ -16,7 +16,7 @@ RSpec.describe LinksController, type: :controller do
       expect(response.body).to match /<h1>.*shortener!/
     end
 
-    it "creates a new shortened url and redirects to show page" do
+    it "creates a new shortened url and saves to db" do
       url = "https://www.apple.com/a_url_with_https"
       request.env["HTTP_ACCEPT"] = "text/javascript"
       post :create, params: { link: { url: url }}
