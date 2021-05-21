@@ -1,31 +1,4 @@
-# Helpjuice Chunin Exam
-
-Welcome to the Helpjuice code challenge. This repository includes a new Rails app used for assessment and testing purposes only.
-
-## Context
-
-[Helpjuice](https://www.helpjuice.com/) provides a reasonable overview and description of who are we and what we do.
-
-Helpjuice empowers large and small companies (such as Amazon.com, Hertz, Virgin Mobile, Shipt.com, Philips, US Government, and thousands of others) to deliver instant support using our software.
-
-We're a smaller, yet growing software company, where everyone wears multiple hats. It's a team of excellent people, who are all willing to help each other because it's the way we work / our culture.
-
-We care about our customers and are a very transparent company in how we build software (e.g.: our product roadmap is public & customer-driven)
-
-
-## Getting Started
-
-```bash
-# Start your Rails server
-rails server
-
-# In a separate tab
-bin/webpack-dev-server
-```
-
-## Tasks
-
-### 1. Build a URL shoretner app
+# URL shortener app
 
 A URL shortener is an online application that converts a regular URL into its condensed format.
 
